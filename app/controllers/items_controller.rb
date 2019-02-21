@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.update(topic_params)
+    if @item.update(item_params)
       redirect_to [@store, @item]
     else
       render :edit
@@ -51,6 +51,6 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:name)
+      params.require(:item).permit(:name, :price, :description)
     end
 end

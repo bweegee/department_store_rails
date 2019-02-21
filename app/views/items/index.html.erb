@@ -1,2 +1,10 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<h1>Click an Item for more details</h1>
+<%= link_to 'Create an Item', new_store_item_path(@store) %>
+<ul>
+  <% @items.each do |item| %>
+    <li><%= link_to item.name, [@store, item] %></li>
+  <% end %>
+</ul>
+<br />
+<br />
+<%= link_to 'Back to Store', store_path(@store) %>

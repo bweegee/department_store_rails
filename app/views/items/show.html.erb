@@ -1,2 +1,10 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<h1><%= @store.name %> - <%= @item.name %></h1>
+<hr />
+<p>Price: $<%= @item.price %></p>
+<p>Description: <%= @item.description %></p>
+<%= link_to 'Edit This Items', edit_store_item_path([@store, @item]) %>
+<br />
+<%= link_to 'Destroy This Item', [@store, @item], method: :delete %>
+<br />
+<br />
+<%= link_to 'Back to Items', store_items_path(@store) %>
